@@ -1,5 +1,7 @@
 {
-  "bookToProcess": "阴魂",
-  "chapterTag": "h1",
-  "sectionTag": "h2"
+  "inProcess": "阴魂",
+  "阴魂": {
+    "chapterTag": "h1",
+    "sectionTag": "h2"
+  }
 }

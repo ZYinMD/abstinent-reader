@@ -1,13 +1,13 @@
 const fs = require('fs');
-const path = require('path');
 const processSection = require('./processSection');
+const generateJSX = require('./generateJSX');
+const { bookPath } = require('./bookInfo');
 
-function processBook(bookName) {
-	const bookPath = path.join(__dirname, '..', '..', 'books', 'separated-htmls', bookName);
+function processBook() {
 	let filenames = fs.readdirSync(bookPath);
-	let testFiles = [filenames[133]];
-	let res = testFiles.map(i => processSection(i, bookPath));
-	console.log(res);
+	let testFiles = [filenames[1], filenames[133], filenames[155]];
+	let sections = testFiles.map(processSection);
+	generateJSX(sections);
 }
 
 module.exports = processBook;
