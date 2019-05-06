@@ -1,30 +1,15 @@
 const fs = require('fs');
+const path = require('path');
 const { outputPath } = require('./bookInfo');
 
-function generateJSX(sections) {
-	const map = {};
-	sections.forEach(i => {
-		map[i.fileID] = {
-			chapterTitle: i.chapterTitle,
-			title: i.title,
-			content: i.content,
-		};
-	});
-	console.log('map:\n    ', map);
-	fs.writeFileSync(outputPath, JSON.stringify(map, null, 2));
+function generateJSX({ fileID, chapterTitle, title, content }) {
+	let chapter = {
+		chapterTitle,
+		title,
+		content,
+	};
+	let chapterPath = path.join(outputPath, fileID + '.json');
+	fs.writeFileSync(chapterPath, JSON.stringify(chapter, null, 2));
 }
 
 module.exports = generateJSX;
-// { fileID, chapterTitle, title, content }
-// export default {
-// 	[fileID]: {
-// 		chapterTitle,
-// 		title,
-// 		content,
-// 	},
-// 	[fileID]: {
-// 		chapterTitle,
-// 		title,
-// 		content,
-// 	},
-// };

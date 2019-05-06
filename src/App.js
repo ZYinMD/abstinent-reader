@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import TOC from './components/TOC/TOC';
+import loadBook from './redux/actions/loadBook';
 
-function App() {
+function App({ loadBook, currentView }) {
+	useEffect(() => { loadBook(); }, [loadBook]);
 	return (
-		<h1>Hello World!</h1>
+		<TOC />
 	);
 }
 
-export default App;
+export default connect(
+	({ currentView }) => ({ currentView }),
+	{ loadBook },
+)(App);

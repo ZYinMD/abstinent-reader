@@ -2,6 +2,7 @@
 
 # books
 /books
+/src/books
 
 # dependencies
 /node_modules
