@@ -1,9 +1,34 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { connect } from 'react-redux';
+import styles from './TOCCSS';
+import openSection from '../../redux/actions/openSection';
 
-export default function TOC() {
+function TOC({ toc, openSection }) {
+	const toEntry = ({ fileID, chapterTitle, title }, index) => {
+		const entry = (
+			<li onClick={() => { openSection(index); }} key={index}>
+				{title || fileID}
+			</li>
+		);
+		if (chapterTitle) {
+			return (
+				<div key={index}>
+					<li className="chapter">{chapterTitle}</li>
+					{entry}
+				</div>
+			);
+		} else return entry;
+	};
+
 	return (
-		<div>
-			lala
-		</div>
+		<ol css={styles}>
+			{toc.map(toEntry)}
+		</ol>
 	);
 }
+
+export default connect(
+	({ toc }) => ({ toc: toc.toc }),
+	{ openSection },
+)(TOC);
