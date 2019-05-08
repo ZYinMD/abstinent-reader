@@ -21,7 +21,6 @@ export const toc = createReducer({
 });
 
 export const currentView = createReducer('toc', {
-	[c.CHANGE_VIEW]: (state, { payload }) => payload,
 	[c.OPEN_SECTION]: state => 'section',
 	[c.BACK_TO_TOC]: state => 'toc',
 });

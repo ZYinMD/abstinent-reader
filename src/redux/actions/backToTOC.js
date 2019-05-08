@@ -1,5 +1,9 @@
 import c from '../constants';
+import persist from '../persist';
 
-export default function backToTOC() {
-	return { type: c.BACK_TO_TOC };
-}
+const backToTOC = () => dispatch => {
+	dispatch({ type: c.BACK_TO_TOC });
+	persist();
+};
+
+export default backToTOC;
