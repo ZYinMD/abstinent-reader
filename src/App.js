@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import loadBook from './redux/actions/loadBook';
 import TOC from './components/TOC/TOC';
 import Section from './components/Section/Section';
+import './App.css';
 
 function App({ loadBook, currentView }) {
 	useEffect(() => { loadBook(); }, [loadBook]);
