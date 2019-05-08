@@ -5,7 +5,13 @@ import styles from './TOCCSS';
 import openSection from '../../redux/actions/openSection';
 
 function TOC({ toc, openSection }) {
-	const toEntry = ({ fileID, chapterTitle, title }, index) => {
+	return (
+		<ol css={styles}>
+			{toc.map(toEntry)}
+		</ol>
+	);
+
+	function toEntry({ fileID, chapterTitle, title }, index) {
 		const entry = (
 			<li onClick={() => { openSection(index); }} key={index}>
 				{title || fileID}
@@ -19,13 +25,7 @@ function TOC({ toc, openSection }) {
 				</div>
 			);
 		} else return entry;
-	};
-
-	return (
-		<ol css={styles}>
-			{toc.map(toEntry)}
-		</ol>
-	);
+	}
 }
 
 export default connect(

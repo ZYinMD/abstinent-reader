@@ -9,6 +9,9 @@ const styles = css`
 		font-size: 20px;
 		cursor: pointer;
 	}
+	li:active {
+		color: DarkGoldenrod;
+	}
 	.chapter {
 		font-size: 30px;
 		font-weight: 500;

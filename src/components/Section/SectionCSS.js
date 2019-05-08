@@ -3,10 +3,10 @@ import { css } from '@emotion/core';
 const styles = css`
 display: flex;
 flex-direction: column;
-font-size: 22px;
-line-height: 150%;
+font-size: 20px;
+font-weight: 100;
+line-height: 180%;
 nav {
-	color: pink;
 	font-family: sans-serif;
 	font-size: 25px;
 	cursor: pointer;
@@ -14,7 +14,7 @@ nav {
 }
 
 nav:active {
-	background-color: silver;
+	color: DarkGoldenrod;
 }
 
 .next {
