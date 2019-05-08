@@ -2,10 +2,14 @@ import settings from '../../settings.json';
 import c from '../constants';
 
 const loadBook = () => async dispatch => {
-	const { currentBook } = settings;
+	const { currentBook, abstainTime } = settings;
 	dispatch({
 		type: c.SET_BOOK_NAME,
 		payload: currentBook,
+	});
+	dispatch({
+		type: c.SET_ABSTAIN_TIME,
+		payload: abstainTime,
 	});
 	let toc = await import(/* webpackMode: "eager" */`../../books/${currentBook}/TOC.json`);
 	dispatch({

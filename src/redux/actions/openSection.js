@@ -1,13 +1,13 @@
 import c from '../constants';
 import loadSectionContent from './loadSectionContent';
-import persist from '../persist';
+import { persist, abstaining } from '../helpers';
 
 const openSection = index => dispatch => {
-	let action = {
+	if (abstaining()) return;
+	dispatch({
 		type: c.OPEN_SECTION,
 		payload: index,
-	};
-	dispatch(action);
+	});
 	dispatch(loadSectionContent());
 	persist();
 };

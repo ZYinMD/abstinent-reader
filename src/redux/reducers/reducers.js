@@ -8,7 +8,7 @@ export const bookName = createReducer(
 
 export const currentSectionInnerHTML = createReducer(
 	'',
-	{ [c.LOAD_SECTION_CONTENT]: (state, { payload }) => payload },
+	{ [c.LOAD_SECTION_CONTENT]: (state, { payload }) => payload.content },
 );
 
 export const toc = createReducer({
@@ -24,3 +24,13 @@ export const currentView = createReducer('toc', {
 	[c.OPEN_SECTION]: state => 'section',
 	[c.BACK_TO_TOC]: state => 'toc',
 });
+
+export const lastLoadTime = createReducer(
+	0,
+	{ [c.LOAD_SECTION_CONTENT]: (state, { payload }) => payload.loadTime },
+);
+
+export const abstainTime = createReducer(
+	0,
+	{ [c.SET_ABSTAIN_TIME]: (state, { payload }) => payload },
+);

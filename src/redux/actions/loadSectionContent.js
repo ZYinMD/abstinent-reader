@@ -1,6 +1,7 @@
 import c from '../constants';
 
 const loadSectionContent = () => async (dispatch, getState) => {
+	let loadTime = Date.now();
 	let { bookName, toc } = getState();
 	let { pointer } = toc;
 	let { fileID } = toc.toc[pointer];
@@ -8,7 +9,7 @@ const loadSectionContent = () => async (dispatch, getState) => {
 	let { content } = await import(/* webpackPrefetch: true  */`../../books/${bookName}/${fileName}`);
 	dispatch({
 		type: c.LOAD_SECTION_CONTENT,
-		payload: content,
+		payload: { content, loadTime },
 	});
 };
 

@@ -1,5 +1,5 @@
 import c from '../constants';
-import persist from '../persist';
+import { persist } from '../helpers';
 
 const backToTOC = () => dispatch => {
 	dispatch({ type: c.BACK_TO_TOC });
