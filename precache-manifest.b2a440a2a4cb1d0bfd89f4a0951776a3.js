@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1952427dd46dd2545d184f02f638ba47",
+    "revision": "be72d7eb078c303feeab2ec658107439",
     "url": "/abstinent-reader/index.html"
   },
   {
-    "revision": "d63e3246c63f091778f8",
+    "revision": "c0cc57c24b6fbd2d314b",
     "url": "/abstinent-reader/static/css/main.1068531e.chunk.css"
   },
   {
@@ -2284,8 +2284,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/abstinent-reader/static/js/99.4f3f9293.chunk.js"
   },
   {
-    "revision": "d63e3246c63f091778f8",
-    "url": "/abstinent-reader/static/js/main.7673a540.chunk.js"
+    "revision": "c0cc57c24b6fbd2d314b",
+    "url": "/abstinent-reader/static/js/main.7683f91f.chunk.js"
   },
   {
     "revision": "36e3701a13862b6d151f",
