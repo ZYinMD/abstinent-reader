@@ -20,7 +20,7 @@ function TOC({ toc, openSection }) {
 		if (chapterTitle) {
 			return (
 				<div key={index}>
-					<li className="chapter">{chapterTitle}</li>
+					<h3 className="chapter">{chapterTitle}</h3>
 					{entry}
 				</div>
 			);

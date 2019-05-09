@@ -1,0 +1,5 @@
+On app start, settings.json is simply imported, as it has an fixed path. TOC.json is then dynamically loaded, because its path is based on the book name. TOC is the default view.
+
+TOC.json contains the file names to each json file containing the section contents. On opening each section, the article is dynamically loaded like this:
+	await import(/* webpackPrefetch: true  */`../../books/${bookName}/${fileName}`);
+"Prefetch" means the code is splitted in /build, but loaded automatically when browser is idle. It's also cached unless you rebuild into a different file name.

@@ -1,0 +1,3 @@
+Abstain time is set in src/settings.json (in minutes).
+
+Every time you load a section, a time stamp is stored in Redux (and also persisted in localStorage).  When you want to load a different section, nothing happens unless the delta of the time is bigger than the abstain time.

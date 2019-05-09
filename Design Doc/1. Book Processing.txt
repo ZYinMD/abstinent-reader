@@ -1,0 +1,3 @@
+Through a chain of functions, each html is parsed and turned into a .json . See comments in each function for details.
+
+In each .json, the "content" or "body" of each article is stored as an html string, like "<article><p>xxx</p><p>xxx</p><p>xxx</p></article>", which will be used to set the innerHTML in react. The html string came from the epub unchanged, so the reading experience will be identical to the reading the .epub.

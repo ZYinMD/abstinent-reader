@@ -1,0 +1,7 @@
+Redux is configured using redux-start-kit.
+
+Inspect the store in Redux DevTools, watch the dispatches, you'll easily figure out how the app works.
+
+The app's current view (which component to display at any given time) is determined by store.currentView
+
+In order to remember where the user left off last time, the store is persisted in localStorage, manually. Every time on an important view change, the localStorage is updated.

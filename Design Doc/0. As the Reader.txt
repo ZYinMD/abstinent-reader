@@ -1,0 +1,16 @@
+The app can store multiple books, but it doesn't have a book shelf view. It lets you read one book at a time, which is controlled by `/src/settings.json`
+
+You can add books by processing epub files, one book at a time.
+
+To add a book:
+	Open an .epub book in Calibre -> click the "edit" button -> select all files -> right click export as html
+	Save the htmls in /books/separated-htmls/${bookName}, copy the .epub into `books/epub-source-files` for record keeping
+	Edit `/processBook/settings.json`.inProcess to be the ${bookName}, inspect the htmls, see if they contain similar pattern as 阴魂
+		(阴魂的pattern: 每个html有个<body>, 内含正文, 每节有一个<h2>是section title, 另外每章的第一节有个<h1>是chatper title, paragraphs是<p>)
+	If similar, add the settings in settings.json, then run `npm run processBook`
+		(If not similar, read `Book Processing.txt`)
+
+To read the book:
+	Change `/src/settings.json`.currentBook to ${bookName}, edit your preferred abstain time (in minutes)
+	run `npm run deploy`
+	Read the book at `https://zyinmd.github.io/abstinent-reader/`

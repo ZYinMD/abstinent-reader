@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { outputPath } = require('./bookInfo');
 
-function generateJSX({ fileID, chapterTitle, title, content }) {
+/**
+ * Write already processed data to a json file. */
+function writeJSON({ fileID, chapterTitle, title, content }) {
 	let chapter = {
 		chapterTitle,
 		title,
@@ -12,4 +14,4 @@ function generateJSX({ fileID, chapterTitle, title, content }) {
 	fs.writeFileSync(chapterPath, JSON.stringify(chapter, null, 2));
 }
 
-module.exports = generateJSX;
+module.exports = writeJSON;

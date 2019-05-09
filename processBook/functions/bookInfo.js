@@ -1,3 +1,5 @@
+/* provide some commonly used path variables for other functions to use  */
+
 const path = require('path');
 const settings = require('../settings.json');
 
