@@ -16,12 +16,12 @@ export const toc = createReducer({
 	pointer: 0,
 }, {
 	[c.UPDATE_TOC]: (state, { payload }) => { state.toc = payload; },
-	[c.OPEN_SECTION]: (state, { payload }) => { state.pointer = payload; },
+	[c.CLICK_SECTION_FROM_TOC]: (state, { payload }) => { state.pointer = payload; },
 	[c.TO_NEXT_SECTION]: state => { state.pointer += 1; },
 });
 
 export const currentView = createReducer('toc', {
-	[c.OPEN_SECTION]: state => 'section',
+	[c.CLICK_SECTION_FROM_TOC]: state => 'section',
 	[c.BACK_TO_TOC]: state => 'toc',
 });
 

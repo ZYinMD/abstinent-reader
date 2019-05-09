@@ -5,7 +5,7 @@ import { persist, abstaining } from '../helpers';
 const openSection = index => dispatch => {
 	if (abstaining()) return;
 	dispatch({
-		type: c.OPEN_SECTION,
+		type: c.CLICK_SECTION_FROM_TOC,
 		payload: index,
 	});
 	dispatch(loadSectionContent());

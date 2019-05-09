@@ -1,4 +1,5 @@
 import c from '../constants';
+import { persist } from '../helpers';
 
 const loadSectionContent = () => async (dispatch, getState) => {
 	let loadTime = Date.now();
@@ -11,6 +12,7 @@ const loadSectionContent = () => async (dispatch, getState) => {
 		type: c.LOAD_SECTION_CONTENT,
 		payload: { content, loadTime },
 	});
+	persist();
 };
 
 export default loadSectionContent;
