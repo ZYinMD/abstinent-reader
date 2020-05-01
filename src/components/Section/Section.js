@@ -10,7 +10,6 @@ function Section({ innerHTML, nextSection, backToTOC }) {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	});
-	console.log('innerHTML:\n    ', innerHTML);
 	return (
 		<section css={styles}>
 			<nav onClick={backToTOC}>{'< Back To TOC'}</nav>
